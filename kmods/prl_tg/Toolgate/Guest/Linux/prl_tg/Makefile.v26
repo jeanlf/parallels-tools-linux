@@ -15,7 +15,7 @@ KVER ?= $(shell uname -r)
 SRC ?= /lib/modules/$(KVER)/build
 
 prl_tg:	$(CFILES) $(HFILES)
-	$(MAKE) -C $(SRC) SUBDIRS=$(shell pwd) SRCROOT=$(shell pwd) CC=$(CC) modules
+	$(MAKE) -C $(SRC) SUBDIRS=$(shell pwd) SRCROOT=$(shell pwd) CC=$(CC) M=$(PWD) modules
 
 clean:
 	rm -rf *.o *.ko *.mod* *symvers .tmp_versions .*.cmd prl_tg.ver 
